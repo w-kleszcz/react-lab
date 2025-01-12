@@ -15,11 +15,9 @@ function App() {
     setYear(event.target.value);
   }
 
-  function handleMovieSubmit(event)
+  function handleMovieSubmit()
   {
-    const newMovie = {};
-    newMovie.title = title
-    newMovie.year = year
+    const newMovie = {title: title, year: year};
     setMovies([...movies, newMovie]);
   }
 
