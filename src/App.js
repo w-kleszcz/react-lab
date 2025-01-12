@@ -15,12 +15,6 @@ function App() {
     setYear(event.target.value);
   }
 
-  function handleMovieSubmit()
-  {
-    const newMovie = {title: title, year: year};
-    setMovies([...movies, newMovie]);
-  }
-
   let message = "";
   if (title.length < 4)
     message = "Tytuł jest za krótki";
@@ -50,7 +44,7 @@ function App() {
       <h3>Year</h3>
       <input type="text" value={year} onChange={handleYearChange}/>
 
-      <button onClick={handleMovieSubmit}>Add</button>
+      <button onClick={() => setMovies([...movies, {title, year}])}>Add</button>
     </div>
   );
 }
